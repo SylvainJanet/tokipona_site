@@ -1,4 +1,5 @@
 import { dictionnaries } from "./dictionnaries.js";
+import { textType } from "./messages/tools.js";
 
 function refreshLanguage() {
   let language = sessionStorage.getItem("language");
@@ -10,7 +11,12 @@ function refreshLanguage() {
   for (const key in dictionnaries[language]) {
     let element = document.getElementById(key);
     if (element) {
-      element.innerText = dictionnaries[language][key];
+      if (!Object.keys(textType).includes(key)) {
+        element.innerText = dictionnaries[language][key];
+      }
+      if (textType[key] === "input") {
+        element.setAttribute("value", dictionnaries[language][key]);
+      }
     }
   }
 }

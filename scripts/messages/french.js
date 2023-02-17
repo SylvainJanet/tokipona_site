@@ -7,4 +7,7 @@ export const frenchDict = {
   back: "Retour",
   title: "Toki Pona",
   h1title: "Toki Pona",
+  mainsubtitle: "La langue du bien",
+  footer: "Toki Pona - Sylvain Janet",
+  backHome: "Retour",
 };

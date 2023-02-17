@@ -16,15 +16,29 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1 id="h1title">Toki pona</h1>
+        <div>
+            <form action="https://sylvainjanet.fr" style="display:inline">
+                <input type="submit" id="backHome">
+            </form>
+            <button id="buttonLanguage"></button>
+        </div>
+        <div>
+            <h1>
+                <object data="img/Toki_pona.svg" width="30" height="30"></object>
+                <span id="h1title"></span>
+            </h1>
+            <p id="mainsubtitle"></p>
+        </div>
         <ul>
             <li><a id="chapter1" href="chapters/01.html"></a></li>
             <li><a id="chapter2" href="chapters/02.html"></a></li>
         </ul>
-        <button id="buttonLanguage"></button>
+
+        <footer>
+            <p id="footer"></p>
+        </footer>
 
         <script src="scripts/changeLanguage.js" async defer type="module"></script>
         <script src="scripts/setMessages.js" async defer type="module"></script>
-        <script src="scripts/linkCorrection.js" async defer type="module"></script>
     </body>
 </html>
