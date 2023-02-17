@@ -10,8 +10,7 @@ document.getElementById("buttonLanguage").addEventListener("click", () => {
     logger.debug("language change - fr");
   } else {
     sessionStorage.setItem("language", "en");
-    logger.debug("language change - fr");
+    logger.debug("language change - en");
   }
   refreshLanguage();
-  logger.warn("Test for prod");
 });
