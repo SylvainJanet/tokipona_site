@@ -12,6 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Delete file 
         run: rm -f script/environment.js
+      - name: see files
+        run: ls
       - name: Rename file 
         run: mv /script/environment.prod.js /script/environment.js
       - name: Delete file 
