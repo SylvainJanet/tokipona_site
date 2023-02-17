@@ -21,8 +21,8 @@ jobs:
       - name: Upload artifact  
         uses: actions/upload-artifact@v3  
         with:  
-          name: personal-website-angular-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}  
-          path: ./dist/personal-website-angular
+          name: tokipona_site-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}  
+          path: ./
           
   deploy:  
     needs : build
@@ -34,7 +34,7 @@ jobs:
       - name: Download artifact  
         uses: actions/download-artifact@v3  
         with:  
-          name: personal-website-angular-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}  
+          name: tokipona_site-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}  
           path: './build'
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
