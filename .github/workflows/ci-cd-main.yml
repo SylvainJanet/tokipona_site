@@ -1,0 +1,51 @@
+name: CI-CD-main
+on: 
+  push:  
+    branches:  
+      - main
+      
+jobs:
+  build:  
+    runs-on: ubuntu-latest  
+    steps:    
+      - name: Checkout source code  
+        uses: actions/checkout@v3
+      - name: Delete file 
+        run: rm -f script/environment.js
+      - name: Rename file 
+        run: mv script/environment.prod.js script/environment.js
+      - name: Delete file 
+        run: rm -f script/environment.prod.js
+      - name: Inject slug/short variables  
+        uses: rlespinasse/github-slug-action@v4
+      - name: Upload artifact  
+        uses: actions/upload-artifact@v3  
+        with:  
+          name: personal-website-angular-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}  
+          path: ./dist/personal-website-angular
+          
+  deploy:  
+    needs : build
+    runs-on: ubuntu-latest  
+  
+    steps:
+      - name: Inject slug/short variables  
+        uses: rlespinasse/github-slug-action@v4 
+      - name: Download artifact  
+        uses: actions/download-artifact@v3  
+        with:  
+          name: personal-website-angular-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}  
+          path: './build'
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: './build/'
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.dev*
+            **/.dev*/**
