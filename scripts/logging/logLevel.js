@@ -1,0 +1,17 @@
+export const LogLevel = {
+  All: 0,
+  Debug: 1,
+  Info: 2,
+  Warn: 3,
+  Error: 4,
+  Fatal: 5,
+  Off: 6,
+
+  0: "All",
+  1: "Debug",
+  2: "Info",
+  3: "Warn",
+  4: "Error",
+  5: "Fatal",
+  6: "Off",
+};

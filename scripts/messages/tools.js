@@ -1,3 +1,8 @@
+import { supportedLanguages } from "../dictionnaries.js";
+import { logService } from "../logging/logService.js";
+
+let logger = logService.withClassName("tools.js");
+
 function checkEveryMessageIsTranslatedInEveryLanguage(
   englishDict,
   dictionnaries
@@ -5,13 +10,14 @@ function checkEveryMessageIsTranslatedInEveryLanguage(
   for (const id in englishDict) {
     for (const dict in dictionnaries) {
       if (!dictionnaries[dict][id]) {
-        console.log(
-          "warning : some messages may not be translated in every language"
-        );
+        logger.warn("some messages may not be translated in every language", {
+          language: supportedLanguages[dict],
+          message: id,
+        });
       }
     }
   }
-  console.log("Messages translated checked");
+  logger.debug("Messages translated checked");
 }
 
 function checkSupportedLanguagesActuallySupported(
@@ -19,16 +25,49 @@ function checkSupportedLanguagesActuallySupported(
   dictionnaries
 ) {
   for (const key in supportedLanguages) {
-    if (!dictionnaries[key]) console.log("A dictionnary is missing");
+    if (!dictionnaries[key])
+      logger.warn("A dictionnary is missing", {
+        missingLanguage: supportedLanguages[key],
+      });
   }
   for (const key in dictionnaries) {
     if (!supportedLanguages[key])
-      console.log("A supported language is not indicated");
+      logger.warn("A supported language is not indicated", {
+        languageNotIndicated: key,
+      });
   }
-  console.log("Supported languages checked");
+  logger.debug("Supported languages checked");
+}
+
+let textType = {
+  backHome: "input",
+};
+
+let possibleTypes = ["input"];
+
+(function checkOnlyPossibleTypes() {
+  for (const key in textType) {
+    if (!possibleTypes.includes(textType[key])) {
+      logger.warn("A text type might be mistyped", { type: textType[key] });
+    }
+  }
+  logger.debug("Possible types checked");
+})();
+
+function checkEveryTextTypeAppears(dictionnary) {
+  for (const key in textType) {
+    if (!Object.keys(dictionnary).includes(key)) {
+      logger.warn("A text type doesn't appear in dictionnaries", {
+        textType: key,
+      });
+    }
+  }
+  logger.debug("Text types checked");
 }
 
 export {
   checkEveryMessageIsTranslatedInEveryLanguage,
   checkSupportedLanguagesActuallySupported,
+  textType,
+  checkEveryTextTypeAppears,
 };
