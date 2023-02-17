@@ -11,11 +11,11 @@ jobs:
       - name: Checkout source code  
         uses: actions/checkout@v3
       - name: Delete file 
-        run: rm -f /scripts/environment.js
+        run: rm -f scripts/environment.js
       - name: Rename file 
-        run: mv /scripts/environment.prod.js /scripts/environment.js
+        run: mv scripts/environment.prod.js scripts/environment.js
       - name: Delete file 
-        run: rm -f /scripts/environment.prod.js
+        run: rm -f scripts/environment.prod.js
       - name: Inject slug/short variables  
         uses: rlespinasse/github-slug-action@v4
       - name: Upload artifact  
