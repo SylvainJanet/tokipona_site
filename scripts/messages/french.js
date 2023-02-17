@@ -10,4 +10,5 @@ export const frenchDict = {
   mainsubtitle: "La langue du bien",
   footer: "Toki Pona - Sylvain Janet",
   backHome: "Retour",
+  tokiPonaLogo: "Logo de Toki Pona",
 };

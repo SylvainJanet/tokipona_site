@@ -10,4 +10,5 @@ export const englishDict = {
   mainsubtitle: "The language of good",
   footer: "Toki Pona - Sylvain Janet",
   backHome: "Back",
+  tokiPonaLogo: "Toki Pona Logo",
 };
