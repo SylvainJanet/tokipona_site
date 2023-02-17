@@ -13,7 +13,7 @@ jobs:
       - name: Delete file 
         run: rm -f script/environment.js
       - name: Rename file 
-        run: mv script/environment.prod.js script/environment.js
+        run: mv /script/environment.prod.js /script/environment.js
       - name: Delete file 
         run: rm -f script/environment.prod.js
       - name: Inject slug/short variables  
