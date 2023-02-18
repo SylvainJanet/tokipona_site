@@ -172,11 +172,6 @@ body {
     width:fit-content;
 }
 
-.deroulant:hover .sous{
-    display: flex;
-    flex-flow: column wrap;
-}
-
 .sous li{
     flex: 1 1 auto;
     text-align: left;
@@ -195,7 +190,15 @@ body {
 }
 
 .sous a:hover,
-.sous button:hover{
+.sous a:active,
+.sous button:hover,
+.sous button:active{
     border-bottom: none;
     background-color: RGBa(200,200,200,0.1);
+}
+
+.deroulant:hover .sous,
+.deroulant:active .sous{
+    display: flex;
+    flex-flow: column wrap;
 }
