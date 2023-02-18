@@ -1,0 +1,71 @@
+.header, .header * {
+    color:white;
+    background-color: black;
+}
+
+.header {
+    display:flex;
+    width:100%;
+    height:50px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.header form input,
+.header a {
+    height:100%; 
+}
+
+.left-header {
+    display:flex;
+    width:70%;
+    margin-left: 5%;
+}
+.right-header {
+    display: flex;
+    width:30%;
+    margin-right: 5%;
+    flex-direction: row-reverse;
+}
+
+.collapsed-header{
+    width:15px;
+    height:100%;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-evenly;
+    margin-right: 5%;
+}
+
+.collapsed-header-ico {
+    display:flex;
+    flex-flow:column;
+    height:25px;
+    justify-content: space-evenly;
+}
+
+.collapsed-header-ico div {
+    background-color: white;
+    width:15px;
+    height:3px;
+}
+
+@media (min-width: 350px){
+    .collapsed-header {
+        display:none
+    }
+}
+
+@media (max-width: 350px){
+    .left-header {
+        display:none
+    }
+    .right-header {
+        display:none
+    }
+    .header {
+        justify-content:right;
+    }
+    
+}

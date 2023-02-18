@@ -41,6 +41,7 @@ function checkSupportedLanguagesActuallySupported(
 
 let textType = {
   backHome: "input",
+  tokiPonaHome: "input",
 };
 
 let possibleTypes = ["input"];
