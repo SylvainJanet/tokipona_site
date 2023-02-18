@@ -10,6 +10,7 @@
         <title id="title"></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="lib/normalize/normalize.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -30,21 +31,40 @@
                 <button id="buttonLanguage"> </button>
             </div>
             <div class="collapsed-header">
-                <div class="collapsed-header-ico">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="deroulant">
+                    <div>
+                        <div class="collapsed-header-ico">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <ul class="sous">
+                        <li><a href="https://sylvainjanet.fr"
+                                id="subMenuBackHome"></a></li>
+                        <li><a href="#" id="subMenuTPHome"></a></li>
+                        <li><button id="subMenuLg"></button></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div>
-            <h1>
-                <object data="img/Toki_pona.svg" width="30" height="30"
-                    id="tokiPonaLogo">Toki Pona Logo</object>
-                <span id="h1title"></span>
-            </h1>
-            <p id="mainsubtitle"></p>
+        <div class="banner">
+            <div class="page-title-container">
+                <div class="page-title">
+                    <div>
+                        <h2 id="mainsubtitle"></h2>
+                    </div>
+                    <h1 class="title-container">
+                        <object data="img/Toki_pona.svg" width="75" height="75"
+                            id="tokiPonaLogo">Toki Pona Logo</object>
+                        <div>
+                            <span id="h1title"></span>
+                        </div>
+                    </h1>
+                </div>
+            </div>
         </div>
+
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro optio
             laboriosam dolorum est deserunt ipsam expedita officiis. Unde
             provident, delectus vero in quo reiciendis, itaque exercitationem
