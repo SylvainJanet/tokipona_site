@@ -4,7 +4,7 @@ export const frenchDict = {
   buttonLanguage: "Anglais",
   chapter1Title: "Chapitre 1",
   chapter2Title: "Chapitre 2",
-  back: "Retour",
+  back: "Accueil",
   title: "Toki Pona",
   h1title: "Toki Pona",
   mainsubtitle: "La langue du bien",
