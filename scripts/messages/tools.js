@@ -40,7 +40,7 @@ function checkSupportedLanguagesActuallySupported(
 }
 
 let textType = {
-  backHome: "input",
+  // backHome: "input",
   tokiPonaHome: "input",
 };
 

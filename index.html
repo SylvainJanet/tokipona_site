@@ -12,7 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="libs/normalizev8.0.1/normalize.css">
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/banner.css">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -20,15 +21,16 @@
         <![endif]-->
         <div class="header">
             <div class="left-header">
-                <form action="https://sylvainjanet.fr" style="display:inline">
-                    <input type="submit" id="backHome">
-                </form>
-                <form action="" style="display:inline">
-                    <input type="submit" id="tokiPonaHome">
-                </form>
+                <div class="line-on-over-container">
+                    <a class="line-on-over" href="https://sylvainjanet.fr" id="backHome"></a>
+                    <div class="line-on-over-line"></div>
+                </div>
             </div>
             <div class="right-header">
-                <button id="buttonLanguage"> </button>
+                <div class="line-on-over-container">
+                    <button class="line-on-over" id="buttonLanguage"> </button>
+                    <div class="line-on-over-line"></div>
+                </div>                
             </div>
             <div class="collapsed-header">
                 <div class="deroulant">
@@ -40,10 +42,20 @@
                         </div>
                     </div>
                     <ul class="sous">
-                        <li><a href="https://sylvainjanet.fr"
-                                id="subMenuBackHome"></a></li>
-                        <li><a href="#" id="subMenuTPHome"></a></li>
-                        <li><button id="subMenuLg"></button></li>
+                        <li>
+                            <div class="collapsed-header-item line-on-over-container">
+                                <a href="https://sylvainjanet.fr"
+                                class="line-on-over" id="subMenuBackHome">
+                                </a> 
+                                <div class="line-on-over-line"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsed-header-item line-on-over-container">
+                                <button class="line-on-over"  id="subMenuLg"></button>
+                                <div class="line-on-over-line"></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -263,5 +275,6 @@
 
         <script src="scripts/changeLanguage.js" async defer type="module"></script>
         <script src="scripts/setMessages.js" async defer type="module"></script>
+        <script src="scripts/animations/barOnHover.js" async defer type="module"></script>
     </body>
 </html>
