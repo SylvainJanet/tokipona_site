@@ -7,13 +7,17 @@ const frenchDict = {
   back: "Retour",
   title: "Toki Pona",
   h1title: "Toki Pona",
-  mainsubtitle: "La langue du bien",
+  mainsubtitle1: "Le langage du bien",
+  mainsubtitle2: "Introduction",
+  mainsubtitle3: "Lessons",
+  mainsubtitle4: "Outils d'entaînement",
   footer: "Toki Pona - ",
   footerLink: "Sylvain Janet",
   backHome: "Accueil",
   tokiPonaLogo: "Logo de Toki Pona",
   tokiPonaHome: "Toki Pona",
   content1: "En construction. Plus de contenu sera disponible bientôt.",
+  backToTopIcon: "Icône retour en haut de page",
 };
 
 frenchDict.subMenuBackHome = frenchDict.backHome;

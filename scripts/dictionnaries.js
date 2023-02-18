@@ -15,4 +15,13 @@ for (const key in dictionnaries) {
   checkEveryTextTypeAppears(dictionnaries[key]);
 }
 
-export { supportedLanguages, dictionnaries };
+function currentDictionnary() {
+  let language = sessionStorage.getItem("language");
+  if (!language || language == "en") {
+    return englishDict;
+  } else {
+    return frenchDict;
+  }
+}
+
+export { supportedLanguages, dictionnaries, currentDictionnary };

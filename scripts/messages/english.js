@@ -7,13 +7,17 @@ const englishDict = {
   back: "Back",
   title: "Toki Pona",
   h1title: "Toki Pona",
-  mainsubtitle: "The language of good",
+  mainsubtitle1: "The language of good",
+  mainsubtitle2: "Introduction",
+  mainsubtitle3: "Lessons",
+  mainsubtitle4: "Practice tools",
   footer: "Toki Pona - ",
   footerLink: "Sylvain Janet",
   backHome: "Home",
   tokiPonaLogo: "Toki Pona Logo",
   tokiPonaHome: "Toki Pona",
   content1: "This is still under construction. Content will come soon.",
+  backToTopIcon: "Back to top icon",
 };
 
 englishDict.subMenuBackHome = englishDict.backHome;
