@@ -9,7 +9,7 @@ Banner logic
     background-image: url("../img/banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    width: 70%;
+    width: 100%;
     height: 400px;
 }
 
@@ -35,7 +35,7 @@ Banner logic
 }
 
 .page-title>div {
-    height:40%;
+    height:35%;
     width:100%;
     text-align: center;
     
@@ -50,3 +50,25 @@ Banner logic
 .page-title>h1>div>span {
     width: fit-content;
 }
+
+.text-animated {
+    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.blink {
+    border-right-style: solid;
+      
+    opacity: 1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: blink;
+    animation-timing-function: steps(2, jump-none);
+    padding: 0.15em;
+  }
+  @keyframes blink {
+    to {
+      opacity: 0;
+    }
+  }
