@@ -17,6 +17,7 @@ const englishDict = {
   tokiPonaLogo: "Toki Pona Logo",
   tokiPonaHome: "Toki Pona",
   content1: "This is still under construction. Content will come soon.",
+  backToTopIcon: "Back to top icon",
 };
 
 englishDict.subMenuBackHome = englishDict.backHome;

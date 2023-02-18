@@ -17,6 +17,7 @@ const frenchDict = {
   tokiPonaLogo: "Logo de Toki Pona",
   tokiPonaHome: "Toki Pona",
   content1: "En construction. Plus de contenu sera disponible bientôt.",
+  backToTopIcon: "Icône retour en haut de page",
 };
 
 frenchDict.subMenuBackHome = frenchDict.backHome;
