@@ -11,4 +11,5 @@ export const englishDict = {
   footer: "Toki Pona - Sylvain Janet",
   backHome: "Back",
   tokiPonaLogo: "Toki Pona Logo",
+  tokiPonaHome: "Toki Pona",
 };
