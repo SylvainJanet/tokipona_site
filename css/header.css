@@ -5,11 +5,6 @@ Header logic
 /**
 Setup color, size
 */
-.header, .header * {
-    color:white;
-    background-color: black;
-}
-
 .header {
     display:flex;
     width:100%;
@@ -17,6 +12,43 @@ Setup color, size
     align-items: center;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+.dark-header, .dark-header *{
+    color:white;
+    background-color: black;
+    transition-property: background-color color;
+    transition-duration: 0.8s;
+}
+
+.dark-header-content {
+    background-color: white;
+    transition-property: background-color;
+    transition-duration: 0.8s;
+}
+
+.light-header, .light-header *{
+    color:black;
+    /* background-color: #f5f5f5; */
+    background-color: white;
+    transition-property: background-color color;
+    transition-duration: 0.8s;
+}
+
+.light-header-content {
+    background-color: black;
+    transition-property: background-color;
+    transition-duration: 0.8s;
+}
+
+.light-header {
+    box-shadow: 0px 6px 9px 0px rgb(0 0 0 / 6%);    
+    box-sizing: border-box;
+}
 /**
 Links are either forms or buttons. Set links style
 */
@@ -130,8 +162,7 @@ Header is collapsed when screen is small enough.
 }
 
 .collapsed-header-ico div {
-    background-color: white;
-    width:15px;
+    width:20px;
     height:3px;
 }
 
@@ -234,7 +265,6 @@ Bars animated on hover
 }
 
 .line-on-over-line {
-    background-color: white;
     height:2px;
     width:0px;
     margin-top:4px;
