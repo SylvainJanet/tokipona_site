@@ -3,7 +3,7 @@ import { logService } from "./logging/logService.js";
 
 const logger = logService.withClassName("changeLanguage.js");
 
-document.getElementById("buttonLanguage").addEventListener("click", () => {
+let changeLanguage = function () {
   let language = sessionStorage.getItem("language");
   if (!language || language == "en") {
     sessionStorage.setItem("language", "fr");
@@ -13,4 +13,9 @@ document.getElementById("buttonLanguage").addEventListener("click", () => {
     logger.debug("language change - en");
   }
   refreshLanguage();
-});
+};
+
+document
+  .getElementById("buttonLanguage")
+  .addEventListener("click", changeLanguage);
+document.getElementById("subMenuLg").addEventListener("click", changeLanguage);
