@@ -25,11 +25,9 @@ window.addEventListener("scroll", () => {
 function updateBackToTop() {
   const el = document.getElementsByClassName("back-to-top").item(0);
   if (window.bactToTopState === "invisible") {
-    // el.style.display = "none";
     el.style.opacity = 0;
   }
   if (window.bactToTopState === "visible") {
-    // el.style.display = "inline";
     el.style.opacity = 1;
   }
 }
