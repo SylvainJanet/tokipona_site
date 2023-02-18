@@ -1,0 +1,18 @@
+.page-content-container {
+    display:flex;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.page-content {
+    background-color: white;
+    width:80%;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+
+    display: flex;
+    justify-content: center;
+}
+
+.page-content p {
+    text-align: center;
+}

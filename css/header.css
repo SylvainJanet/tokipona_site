@@ -19,14 +19,15 @@ Setup color, size
   }
 
 .dark-header, .dark-header *{
-    color:white;
-    background-color: black;
+    color:black;
+    /* background-color:lavender; */
+    background-color:rgb(209 208 222);
     transition-property: background-color color;
     transition-duration: 0.8s;
 }
 
 .dark-header-content {
-    background-color: white;
+    background-color: black;
     transition-property: background-color;
     transition-duration: 0.8s;
 }
