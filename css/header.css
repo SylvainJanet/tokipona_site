@@ -142,7 +142,7 @@ Collapsed menu can be opened to show options.
     flex: 1 1 auto;
 }
 
-.sous>li>div
+.collapsed-header-item
 /* .deroulant button{ */
 {
     display: block;
@@ -223,23 +223,17 @@ and extended links.
 /**
 Bars animated on hover
 */
-.left-header>div,
-.right-header>div {
+.line-on-over-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.sous>li>div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+.sous .line-on-over-container {
     margin-right: 15px;
 }
 
-.left-header>div>div,
-.right-header>div>div,
-.sous>li>div>div {
+.line-on-over-line {
     background-color: white;
     height:2px;
     width:0px;

@@ -1,5 +1,4 @@
-console.log("lineOnOver");
-let els = document.getElementsByClassName("lineOnOver");
+let els = document.getElementsByClassName("line-on-over");
 
 const liste = [];
 
