@@ -1,4 +1,4 @@
-import {} from "../inputDevice.js";
+import "../inputDevice.js";
 
 let els = document.getElementsByClassName("line-on-over");
 

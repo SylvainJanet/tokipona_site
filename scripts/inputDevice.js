@@ -1,3 +1,5 @@
+// https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+
 window.mobileCheck = function () {
   let check = false;
   (function (a) {
@@ -10,6 +12,6 @@ window.mobileCheck = function () {
       )
     )
       check = true;
-  })(navigator.userAgent || navigator.vendor || window.opera);
+  })(navigator.userAgent || window.opera);
   return check;
 };

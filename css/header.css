@@ -113,7 +113,7 @@ Header is collapsed when screen is small enough.
     display:flex;
     flex-flow:column;
     justify-content: space-evenly;
-    margin-right: 5%;
+    margin-right: 7.5%;
 }
 
 .deroulant>div {
