@@ -1,3 +1,3 @@
 import { refreshLanguage } from "./refreshLanguage.js";
 
-refreshLanguage();
+refreshLanguage(false);

@@ -12,7 +12,7 @@ let changeLanguage = function () {
     sessionStorage.setItem("language", "en");
     logger.debug("language change - en");
   }
-  refreshLanguage();
+  refreshLanguage(true);
 };
 
 document

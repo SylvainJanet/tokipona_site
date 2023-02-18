@@ -1,0 +1,252 @@
+/**
+Header logic
+*/
+
+/**
+Setup color, size
+*/
+.header, .header * {
+    color:white;
+    background-color: black;
+}
+
+.header {
+    display:flex;
+    width:100%;
+    height:60px;
+    align-items: center;
+}
+
+/**
+Links are either forms or buttons. Set links style
+*/
+.header a {
+    text-decoration: none;
+}
+.header form {
+    margin-left:15px;
+    margin-right:15px;
+    height: min-content;
+}
+
+.left-header a {
+    margin-left:15px;
+    margin-right:15px;
+    height: min-content;
+}
+
+.right-header button {
+    margin-left:15px;
+    margin-right:15px;
+    height: min-content;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+.header form>input {
+    height:100%; 
+}
+
+.header button {
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.header input,
+.header button {
+    border:none
+}
+
+
+/**
+Make header not selectable
+*/
+.header form,
+.left-header a,
+.left-header div,
+.left-header button,
+.right-header button,
+.right-header a,
+.right-header div,
+.collapsed-header {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/** 
+Ensure cursor change on header links
+*/
+.header form input,
+.left-header button,
+.right-header button,
+.collapsed-header {
+    cursor: pointer;
+}
+
+/**
+Header is divided into two part when screen is big enough.
+One on the left, one on the right.
+*/
+.left-header {
+    display:flex;
+    width:70%;
+    margin-left: 5%;
+}
+.right-header {
+    display: flex;
+    width:30%;
+    margin-right: 5%;
+    flex-direction: row-reverse;
+}
+
+/**
+Header is collapsed when screen is small enough.
+*/
+.collapsed-header{
+    width:15px;
+    height:100%;
+    display:flex;
+    flex-flow:column;
+    justify-content: space-evenly;
+    margin-right: 5%;
+}
+
+.deroulant>div {
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+
+.collapsed-header-ico {
+    display:flex;
+    flex-flow:column;
+    height:25px;
+    justify-content: space-evenly;
+}
+
+.collapsed-header-ico div {
+    background-color: white;
+    width:15px;
+    height:3px;
+}
+
+/**
+Collapsed menu can be opened to show options.
+*/
+.deroulant{
+    flex: 1 1 auto;
+}
+
+.sous>li>div
+/* .deroulant button{ */
+{
+    display: block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+.sous{
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    list-style: none;
+    padding-inline-start: 0px;
+    margin-block-start: 0em;
+    right:0%;
+    width:fit-content;
+    padding-left:15px;
+}
+
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+.sous button {
+    cursor: pointer;
+    width: fit-content;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sous a,
+.sous button{
+    border-bottom: none;
+    text-align: right;
+}
+
+.sous a:hover,
+.sous a:active,
+.sous button:hover,
+.sous button:active{
+    border-bottom: none;
+    /* background-color: RGBa(200,200,200,0.1); */
+}
+
+.deroulant:hover .sous,
+.deroulant:active .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/**
+Set up responsive design to switch between collapsed
+and extended links.
+*/
+@media (min-width: 500px){
+    .collapsed-header {
+        display:none
+    }
+}
+
+@media (max-width: 499px){
+    .left-header {
+        display:none
+    }
+    .right-header {
+        display:none
+    }
+    .header {
+        justify-content:right;
+    }
+    
+}
+
+/**
+Bars animated on hover
+*/
+.left-header>div,
+.right-header>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sous>li>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end
+}
+
+.left-header>div>div,
+.right-header>div>div,
+.sous>li>div>div {
+    background-color: white;
+    height:2px;
+    width:0px;
+    margin-top:4px;
+    transition-property: width;
+    transition-duration: 0.4s;
+}
+
+.sous>li>div {
+    margin-right: 15px;
+}
