@@ -17,6 +17,11 @@
     height:100%; 
 }
 
+.header input,
+.header button {
+    border:none
+}
+
 .left-header {
     display:flex;
     width:70%;
