@@ -1,6 +1,11 @@
 const header = document.createElement("div");
 header.setAttribute("class", "header sticky dark-header");
 
+/**
+ * Why ontouchstart ?
+ * -> https://stackoverflow.com/a/33681490
+ */
+
 const content =
   "" +
   '<div class="left-header">' +
