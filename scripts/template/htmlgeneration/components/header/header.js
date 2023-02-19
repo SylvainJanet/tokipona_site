@@ -16,7 +16,7 @@ const content =
   "                </div>                " +
   "            </div>" +
   '            <div class="collapsed-header">' +
-  '                <div class="deroulant">' +
+  '                <div class="deroulant" ontouchstart>' +
   "                    <div>" +
   '                        <div class="collapsed-header-ico">' +
   '                            <div class="dark-header-content"></div>' +
