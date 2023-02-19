@@ -1,10 +1,6 @@
 const header = document.createElement("div");
 header.setAttribute("class", "header sticky dark-header");
 
-// const leftHeader = document.createElement("div");
-// const container = document.createElement("div");
-// const a = document.createElement("a")
-
 const content =
   "" +
   '<div class="left-header">' +
