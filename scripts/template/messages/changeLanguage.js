@@ -1,5 +1,5 @@
 import { refreshLanguage } from "./refreshLanguage.js";
-import { logService } from "./logging/logService.js";
+import { logService } from "../logging/logService.js";
 
 const logger = logService.withClassName("changeLanguage.js");
 

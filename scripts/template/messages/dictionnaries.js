@@ -1,10 +1,10 @@
-import { frenchDict } from "./messages/french.js";
-import { englishDict } from "./messages/english.js";
+import { frenchDict } from "./dict/french.js";
+import { englishDict } from "./dict/english.js";
 import {
   checkSupportedLanguagesActuallySupported,
   checkEveryMessageIsTranslatedInEveryLanguage,
   checkEveryTextTypeAppears,
-} from "./messages/tools.js";
+} from "./tools.js";
 
 /**
  * Initialises the dictionnaries, the languages, and do the

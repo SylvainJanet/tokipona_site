@@ -2,13 +2,15 @@
  * Header style should change when the user has scrolled enough.
  */
 import { logService } from "../logging/logService.js";
+import { scriptVar } from "../tools/setUp.js";
 
 let logger = logService.withClassName("headerScroll.js");
 
 /**
  * Setup for the class change to modify the class of the header when scrolling.
  */
-const trigger = 400 - 60; // banner height - header height
+const bannerHeight = scriptVar.isBanner ? 400 : 0;
+const trigger = bannerHeight - 60; // banner height - header height
 // so that the threshold corresponds to the end of the banner
 let headerState = scrollY > trigger ? "light" : "dark";
 updateHeader();
