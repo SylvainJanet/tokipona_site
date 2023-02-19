@@ -57,6 +57,10 @@ Banner logic
     margin-bottom: 0;
 }
 
+
+/**
+Animation of the blinking cursor
+*/
 .blink {
     border-right-style: solid;
       

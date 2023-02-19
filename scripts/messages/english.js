@@ -1,3 +1,6 @@
+/**
+ * English dictionnary
+ */
 const englishDict = {
   chapter1: "Chapter 1",
   chapter2: "Chapter 2",

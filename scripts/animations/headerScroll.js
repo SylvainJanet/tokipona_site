@@ -1,50 +1,66 @@
-const trigger = 400 - 60;
-window.headerState = scrollY > trigger ? "middle" : "top";
+/**
+ * Header style should change when the user has scrolled enough.
+ */
+import { logService } from "../logging/logService.js";
+
+let logger = logService.withClassName("headerScroll.js");
+
+/**
+ * Setup for the class change to modify the class of the header when scrolling.
+ */
+const trigger = 400 - 60; // banner height - header height
+// so that the threshold corresponds to the end of the banner
+let headerState = scrollY > trigger ? "light" : "dark";
 updateHeader();
 
+/**
+ * Update the variable headerState with the state of the header
+ * depending on the scrollY value.
+ * Below a threshold, the header should be dark. Once the scrollY
+ * value goes over, the header should be light.
+ */
 window.addEventListener("scroll", () => {
   if (scrollY > trigger) {
-    if (window.headerState == "top") {
-      window.headerState = "middle";
+    if (headerState == "dark") {
+      headerState = "light";
       updateHeader();
     }
   }
   if (scrollY <= trigger) {
-    if (window.headerState == "middle") {
-      window.headerState = "top";
+    if (headerState == "light") {
+      headerState = "dark";
       updateHeader();
     }
   }
 });
 
-function updateHeader() {
-  const body = document.getElementsByTagName("body").item(0);
-  if (window.headerState === "middle") {
-    const colored = body.querySelectorAll(".dark-header");
-    for (let i = 0; i < colored.length; i++) {
-      const element = colored.item(i);
-      element.classList.remove("dark-header");
-      element.classList.add("light-header");
-    }
-    const coloredContent = body.querySelectorAll(".dark-header-content");
-    for (let i = 0; i < coloredContent.length; i++) {
-      const element = coloredContent.item(i);
-      element.classList.remove("dark-header-content");
-      element.classList.add("light-header-content");
-    }
+/**
+ * Changes every element having class oldClass. Replace that class
+ * with the class newClass
+ * @param {*} oldClass the class to replace
+ * @param {*} newClass the new class
+ */
+function changeEveryClass(oldClass, newClass) {
+  const els = document.querySelectorAll("." + oldClass);
+  for (let i = 0; i < els.length; i++) {
+    const el = els.item(i);
+    el.classList.remove(oldClass);
+    el.classList.add(newClass);
   }
-  if (window.headerState === "top") {
-    const colored = body.querySelectorAll(".light-header");
-    for (let i = 0; i < colored.length; i++) {
-      const element = colored.item(i);
-      element.classList.remove("light-header");
-      element.classList.add("dark-header");
-    }
-    const coloredContent = body.querySelectorAll(".light-header-content");
-    for (let i = 0; i < coloredContent.length; i++) {
-      const element = coloredContent.item(i);
-      element.classList.remove("light-header-content");
-      element.classList.add("dark-header-content");
-    }
+}
+
+/**
+ * Actual update of the style of the appropriate element according to
+ * the state set in headerState.
+ */
+function updateHeader() {
+  logger.debug("Update header style", { newstate: headerState });
+  if (headerState === "light") {
+    changeEveryClass("dark-header", "light-header");
+    changeEveryClass("dark-header-content", "light-header-content");
+  }
+  if (headerState === "dark") {
+    changeEveryClass("light-header", "dark-header");
+    changeEveryClass("light-header-content", "dark-header-content");
   }
 }

@@ -6,6 +6,10 @@ import {
   checkEveryTextTypeAppears,
 } from "./messages/tools.js";
 
+/**
+ * Initialises the dictionnaries, the languages, and do the
+ * initial checks.
+ */
 const supportedLanguages = { en: "English", fr: "French" };
 const dictionnaries = { en: englishDict, fr: frenchDict };
 
@@ -15,8 +19,12 @@ for (const key in dictionnaries) {
   checkEveryTextTypeAppears(dictionnaries[key]);
 }
 
+/**
+ *
+ * @returns the dictionnary corresponding to the current language
+ */
 function currentDictionnary() {
-  let language = sessionStorage.getItem("language");
+  let language = localStorage.getItem("language");
   if (!language || language == "en") {
     return englishDict;
   } else {

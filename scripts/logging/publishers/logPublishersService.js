@@ -1,5 +1,9 @@
 import { LogConsole, LogLocalStroage } from "./logPublishers.js";
 
+/**
+ * Log Publisher Service, instanciates and provides the publishers
+ * used.
+ */
 export class LogPublisherService {
   constructor() {
     this.buildPublishers();

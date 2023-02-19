@@ -4,6 +4,9 @@ import { LogPublisherService } from "./publishers/logPublishersService.js";
 
 const publishersService = new LogPublisherService();
 
+/**
+ * LogService class. Used to log
+ */
 export class LogService {
   level = env.logLevel;
   logWithDate = env.logWithDate;
@@ -65,6 +68,10 @@ export class LogService {
   }
 }
 
+/**
+ * LogEntry objects having all the information that
+ * could be formatted and logged by a LogPublisher.
+ */
 export class LogEntry {
   entryDate = new Date();
   message = "";
@@ -73,6 +80,10 @@ export class LogEntry {
   logWithDate = true;
   className = "";
 
+  /**
+   * Provides a canonical format of the log entry.
+   * @returns a log message formatted
+   */
   buildLogString() {
     let ret = "";
 
