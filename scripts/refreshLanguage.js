@@ -1,6 +1,12 @@
 import { dictionnaries } from "./dictionnaries.js";
 import { textType } from "./messages/tools.js";
 
+/**
+ * Decreases opacity of the page from 1 to 0 in N steps at a certain speed.
+ * @param {*} i current step. Starts at 0
+ * @param {*} N max number of step
+ * @param {*} step duration of a step in millisecond
+ */
 function decreaseOpacity(i, N, step) {
   setTimeout(() => {
     document.getElementsByTagName("html").item(0).style.opacity =
@@ -11,6 +17,12 @@ function decreaseOpacity(i, N, step) {
   }, step);
 }
 
+/**
+ * Increases opacity of the page from 0 to 1 in N steps at a certain speed.
+ * @param {*} i current step. Starts at 0
+ * @param {*} N max number of step
+ * @param {*} step duration of a step in millisecond
+ */
 function increaseOpacity(i, N, step) {
   setTimeout(() => {
     document.getElementsByTagName("html").item(0).style.opacity = i / (N - 1);
@@ -20,6 +32,12 @@ function increaseOpacity(i, N, step) {
   }, step);
 }
 
+/**
+ * Refreshes the texts of the page. By default, if the dictionnary key
+ * has no textType specified, just change the innerText. Otherwise, it
+ * depends on the strategy used.
+ * @param {*} language the language
+ */
 function refreshTexts(language) {
   for (const key in dictionnaries[language]) {
     let element = document.getElementById(key);
@@ -34,6 +52,12 @@ function refreshTexts(language) {
   }
 }
 
+/**
+ * Refresh the language. The page will possibly fade-out, then
+ * the texts will change, and the page will possibly then fade-in again.
+ * @param {*} doAnimate should the refresh be during a
+ * fade-out/fade-in.
+ */
 function refreshLanguage(doAnimate) {
   let duration = 0.1;
   let step = 5;
@@ -47,7 +71,7 @@ function refreshLanguage(doAnimate) {
   }
 
   setTimeout(() => {
-    let language = sessionStorage.getItem("language");
+    let language = localStorage.getItem("language");
     if (!language) {
       language = "en";
     }

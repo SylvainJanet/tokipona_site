@@ -1,5 +1,8 @@
-// https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
-
+/**
+ * https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+ * Test wether or not the user is on mobile.
+ * @returns true if the user is on mobile
+ */
 window.mobileCheck = function () {
   let check = false;
   (function (a) {

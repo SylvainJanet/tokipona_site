@@ -1,3 +1,6 @@
+/**
+ * French dictionnary
+ */
 const frenchDict = {
   chapter1: "Chapitre 1",
   chapter2: "Chapitre 2",

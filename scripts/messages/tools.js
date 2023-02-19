@@ -3,6 +3,14 @@ import { logService } from "../logging/logService.js";
 
 let logger = logService.withClassName("tools.js");
 
+/**
+ * Checks that every key in the english dictionnary is also
+ * a key in every other dictionnaries.
+ * Mainly to provide a simple way to avoid typos or
+ * small mistakes that would be otherwise difficult to detect.
+ * @param {*} englishDict the english dictionnary
+ * @param {*} dictionnaries the dictionnaries
+ */
 function checkEveryMessageIsTranslatedInEveryLanguage(
   englishDict,
   dictionnaries
@@ -20,6 +28,14 @@ function checkEveryMessageIsTranslatedInEveryLanguage(
   logger.debug("Messages translated checked");
 }
 
+/**
+ * Checks that the keys of the supportedLanguages object and
+ * of the dictionnaries object are the same.
+ * Mainly to provide a simple way to avoid typos or
+ * small mistakes that would be otherwise difficult to detect.
+ * @param {*} supportedLanguages the supportedLanguages object
+ * @param {*} dictionnaries the dictionnaries
+ */
 function checkSupportedLanguagesActuallySupported(
   supportedLanguages,
   dictionnaries
@@ -39,6 +55,11 @@ function checkSupportedLanguagesActuallySupported(
   logger.debug("Supported languages checked");
 }
 
+/**
+ * In case some messages requires another strategy than changing the innerText value
+ * of an element, list other possibleTypes, and recording the keys that have other
+ * strategies along with said other strategy types.
+ */
 let textType = {
   // backHome: "input",
   tokiPonaHome: "input",
@@ -46,6 +67,12 @@ let textType = {
 
 let possibleTypes = ["input"];
 
+/**
+ * Checks that every value of properties of the textType object is
+ * part of the possibleTypes array.
+ * Mainly to provide a simple way to avoid typos or
+ * small mistakes that would be otherwise difficult to detect.
+ */
 (function checkOnlyPossibleTypes() {
   for (const key in textType) {
     if (!possibleTypes.includes(textType[key])) {
@@ -55,6 +82,13 @@ let possibleTypes = ["input"];
   logger.debug("Possible types checked");
 })();
 
+/**
+ * Checks that every value of properties of the textType object is
+ * an actual key of the dictionnary.
+ * Mainly to provide a simple way to avoid typos or
+ * small mistakes that would be otherwise difficult to detect.
+ * @param {*} dictionnary the dictionnary
+ */
 function checkEveryTextTypeAppears(dictionnary) {
   for (const key in textType) {
     if (!Object.keys(dictionnary).includes(key)) {
