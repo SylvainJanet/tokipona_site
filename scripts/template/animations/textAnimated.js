@@ -1,4 +1,4 @@
-import { currentDictionnary } from "../dictionnaries.js";
+import { currentDictionnary } from "../messages/dictionnaries.js";
 import { logService } from "../logging/logService.js";
 
 let logger = logService.withClassName("textAnimated.js"); // not used to avoid excessive logging

@@ -1,4 +1,4 @@
-import { LogLevel } from "./logging/logLevel.js";
+import { LogLevel } from "./template/logging/logLevel.js";
 
 /**
  * Environment variables for production..

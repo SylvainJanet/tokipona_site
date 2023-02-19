@@ -1,5 +1,5 @@
 import { dictionnaries } from "./dictionnaries.js";
-import { textType } from "./messages/tools.js";
+import { textType } from "./tools.js";
 
 /**
  * Decreases opacity of the page from 1 to 0 in N steps at a certain speed.

@@ -1,4 +1,4 @@
-import { env } from "../environment.js";
+import { env } from "../../environment.js";
 import { LogLevel } from "./logLevel.js";
 import { LogPublisherService } from "./publishers/logPublishersService.js";
 

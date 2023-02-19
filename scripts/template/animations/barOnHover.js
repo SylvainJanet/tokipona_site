@@ -1,7 +1,7 @@
 /**
  * Logic for the appearing line appearing when the user hover some element.
  */
-import "../inputDevice.js";
+import "../tools/inputDevice.js";
 import { logService } from "../logging/logService.js";
 
 let logger = logService.withClassName("barOnHover.js");

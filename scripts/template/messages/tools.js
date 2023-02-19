@@ -1,4 +1,4 @@
-import { supportedLanguages } from "../dictionnaries.js";
+import { supportedLanguages } from "./dictionnaries.js";
 import { logService } from "../logging/logService.js";
 
 let logger = logService.withClassName("tools.js");
