@@ -2,7 +2,7 @@
 * Global styles
 */
 
-@import "/libs/normalizev8.0.1/normalize.css";
+@import "../libs/normalizev8.0.1/normalize.css";
 @import "normalize/normalize.css";
 @import "./content/content.css";
 
