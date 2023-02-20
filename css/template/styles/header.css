@@ -148,7 +148,6 @@ Header is collapsed when screen is small enough.
 .collapsed-header {
   width: var(--collapsed-header-width);
   height: var(--collapsed-header-height);
-  display: flex;
   flex-flow: column;
   justify-content: space-evenly;
   margin-right: var(--collapsed-header-margin-right);
