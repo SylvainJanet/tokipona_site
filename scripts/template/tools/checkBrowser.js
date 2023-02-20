@@ -1,8 +1,8 @@
 // Based on https://gist.github.com/motss/cb65fd2034b6937c4cfd0264fc458cf6
 function supportsCssVariables() {
-  var opacity = 1;
-  var el = document.body;
-  var result = false;
+  const opacity = 1;
+  const el = document.body;
+  let result = false;
 
   // Setup CSS properties:
   el.style.setProperty("--test-opacity", opacity);

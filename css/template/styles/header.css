@@ -12,6 +12,7 @@ Setup color, size
   align-items: center;
   z-index: 1;
 }
+
 .header-container {
   display: flex;
   width: 100%;
@@ -21,6 +22,15 @@ Setup color, size
   padding-left: var(--header-container-padding);
   margin-right: auto;
   margin-left: auto;
+  /**
+  Responsive header
+  */
+  max-width: var(--resp-content-width);
+  /**
+Set up responsive design to switch between collapsed
+and extended links.
+*/
+  justify-content: var(--resp-header-container-justify);
 }
 
 .sticky {
@@ -116,10 +126,20 @@ One on the left, one on the right.
 */
 .left-header {
   width: var(--left-header-width);
+  /**
+Set up responsive design to switch between collapsed
+and extended links.
+*/
+  display: var(--resp-left-header-display);
 }
 .right-header {
   width: var(--right-header-width);
   flex-direction: row-reverse;
+  /**
+Set up responsive design to switch between collapsed
+and extended links.
+*/
+  display: var(--resp-right-header-display);
 }
 
 /**
@@ -132,6 +152,11 @@ Header is collapsed when screen is small enough.
   flex-flow: column;
   justify-content: space-evenly;
   margin-right: var(--collapsed-header-margin-right);
+  /**
+  Set up responsive design to switch between collapsed
+  and extended links.
+  */
+  display: var(--resp-collapsed-header-display);
 }
 
 .deroulant > div {
@@ -209,31 +234,6 @@ Collapsed menu can be opened to show options.
 .deroulant:active .sous {
   display: flex;
   flex-flow: column wrap;
-}
-
-/**
-Responsive header
-*/
-.header-container {
-  max-width: var(--resp-content-width);
-}
-
-/**
-Set up responsive design to switch between collapsed
-and extended links.
-*/
-.collapsed-header {
-  display: var(--resp-collapsed-header-display);
-}
-
-.left-header {
-  display: var(--resp-left-header-display);
-}
-.right-header {
-  display: var(--resp-right-header-display);
-}
-.header-container {
-  justify-content: var(--resp-header-container-justify);
 }
 
 /**
