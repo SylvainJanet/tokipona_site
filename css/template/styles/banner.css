@@ -2,77 +2,92 @@
 Banner logic
 */
 .banner-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .banner {
-    background-image: url("../../../img/template/banner.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 400px;
+  background-image: var(--banner-bg-image-url);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin-top: var(--header-height);
+  height: var(--banner-height);
 }
 
 .page-title-container {
-    display: flex;
-    justify-content: center;
-    height:100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
 .page-title {
-    display: flex;
-    align-items: center;
-    width:70%;
-    flex-direction: column-reverse;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: var(--banner-page-title-width);
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
 }
 
-.title-container{
-    height:45%;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    width:fit-content;
+.title-container {
+  height: var(--banner-title-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.page-title>div {
-    height:35%;
-    width:100%;
-    text-align: center;
-    
+.page-title > div {
+  height: fit-content;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.page-title>h1>div {
-    display:flex;
-    width:fit-content;
-    text-align: center;
+.page-title > div > h2 {
+  height: min-content;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.page-title>h1>div>span {
-    width: fit-content;
+.page-title > div > span {
+  height: 100%;
+}
+
+.page-title > h1 > div {
+  display: flex;
+  width: fit-content;
+  text-align: center;
+}
+
+.page-title > h1 > div > span {
+  width: fit-content;
 }
 
 .text-animated {
-    display: inline;
-    margin-top: 0;
-    margin-bottom: 0;
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
 
 /**
 Animation of the blinking cursor
 */
 .blink {
-    border-right-style: solid;
-      
-    opacity: 1;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-name: blink;
-    animation-timing-function: steps(2, jump-none);
-    padding: 0.15em;
+  border-right-style: solid;
+
+  opacity: 1;
+  animation-duration: var(--banner-cursor-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: blink;
+  animation-timing-function: steps(2, jump-none);
+  padding-left: 0.15em;
+}
+@keyframes blink {
+  to {
+    opacity: 0;
   }
-  @keyframes blink {
-    to {
-      opacity: 0;
-    }
-  }
+}

@@ -100,7 +100,6 @@ let logger = logService.withClassName("textAnimated.js"); // not used to avoid e
   cursor.style.borderRightWidth = blinkWidth;
   cursor.classList.add("blink");
   animatedElement.parentElement.appendChild(cursor);
-  animatedElement.style.padding = "0.1em";
 
   typingEffect();
 })();

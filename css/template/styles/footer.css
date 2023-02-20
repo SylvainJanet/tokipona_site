@@ -2,11 +2,11 @@
 * Footer style
 */
 footer {
-    display:flex;
-    justify-content: center;
-    padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-top: var(--footer-padding-top);
 }
 
 #footerLink {
-    text-decoration: none;
+  text-decoration: none;
 }
