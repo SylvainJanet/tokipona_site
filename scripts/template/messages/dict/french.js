@@ -4,7 +4,7 @@
 const frenchDict = {
   chapter1: "Chapitre 1",
   chapter2: "Chapitre 2",
-  buttonLanguage: "Anglais",
+  buttonLanguage: "English",
   chapter1Title: "Chapitre 1",
   chapter2Title: "Chapitre 2",
   back: "Retour",
@@ -16,7 +16,7 @@ const frenchDict = {
   mainsubtitle4: "Outils d'entaînement",
   footer: "Toki Pona - ",
   footerLink: "Sylvain Janet",
-  backHome: "Accueil",
+  backHome: "Sylvain Janet",
   tokiPonaLogo: "Logo de Toki Pona",
   tokiPonaHome: "Toki Pona",
   content1: "En construction. Plus de contenu sera disponible bientôt.",

@@ -4,17 +4,17 @@ Back to top icon at the bottom of the display
 .back-to-top {
     position: fixed;
     background: rgb(209 208 222);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    right: 1%;
-    bottom: 1%;
+    right: 1.5em;
+    bottom: 1.5em;
     opacity: 0;
     transition: opacity 0.4s; 
 }
 
 .back-to-top object {
-    width:fit-content; 
-    height:fit-content;
+    width: 50px;
+    height:50px;
     pointer-events: none;
 }

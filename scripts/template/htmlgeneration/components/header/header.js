@@ -1,6 +1,11 @@
 const header = document.createElement("div");
 header.setAttribute("class", "header sticky dark-header");
 
+/**
+ * Why ontouchstart ?
+ * -> https://stackoverflow.com/a/33681490
+ */
+
 const content =
   "" +
   '<div class="left-header">' +
@@ -16,7 +21,7 @@ const content =
   "                </div>                " +
   "            </div>" +
   '            <div class="collapsed-header">' +
-  '                <div class="deroulant">' +
+  '                <div class="deroulant" ontouchstart>' +
   "                    <div>" +
   '                        <div class="collapsed-header-ico">' +
   '                            <div class="dark-header-content"></div>' +

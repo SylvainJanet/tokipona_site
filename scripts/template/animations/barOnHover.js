@@ -26,6 +26,26 @@ for (let el of els) {
 }
 
 /**
+ * Gets the actual width of an element
+ * @param {*} element the element
+ * @returns the actual width
+ */
+function getActualWidth(element) {
+  // https://stackoverflow.com/a/32637350
+  // https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
+  // https://stackoverflow.com/a/63622682
+  // https://stackoverflow.com/a/29881817
+  const rec = element.getBoundingClientRect();
+  let width = rec.width;
+  const cs = getComputedStyle(element);
+  const paddingX = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+  const borderX =
+    parseFloat(cs.borderLeftWidth) + parseFloat(cs.borderRightWidth);
+  width -= paddingX + borderX;
+  return width;
+}
+
+/**
  * Add the appropriate event listener to change the styles of the line elements
  * on either mouseenter/mouseleave (when on desktop). This behaviour doesn't translate
  * exactly well on mobile (when the user stop touching the screen, the mouse isn't
@@ -36,22 +56,24 @@ liste.forEach((x) => {
   if (window.mobileCheck()) {
     x.clickable.addEventListener("touchstart", () => {
       logger.debug("line-on-over touchstart - line should appear");
-      x.line.style.width = "40px";
+      const width = getActualWidth(x.clickable);
+      x.line.style.width = (75 * width) / 100 + "px";
     });
 
     x.clickable.addEventListener("touchend", () => {
       logger.debug("line-on-over touchend - line should disappear");
-      x.line.style.width = "0px";
+      x.line.style.width = "0%";
     });
   } else {
     x.clickable.addEventListener("mouseenter", () => {
       logger.debug("line-on-over mouseenter - line should appear");
-      x.line.style.width = "40px";
+      const width = getActualWidth(x.clickable);
+      x.line.style.width = (75 * width) / 100 + "px";
     });
 
     x.clickable.addEventListener("mouseleave", () => {
       logger.debug("line-on-over mouseleave - line should disappear");
-      x.line.style.width = "0px";
+      x.line.style.width = "0%";
     });
   }
 });
