@@ -31,20 +31,20 @@ Header variables
   --header-lines-on-hover-duration: 0.4s;
 }
 
-/* @media screen and (not (min-width: 576px)) { */
-:root {
-  --resp-collapsed-header-display: block;
-  --resp-left-header-display: none;
-  --resp-right-header-display: none;
-  --resp-header-container-justify: right;
+@media (max-width: 575px) {
+  :root {
+    --resp-collapsed-header-display: block;
+    --resp-left-header-display: none;
+    --resp-right-header-display: none;
+    --resp-header-container-justify: right;
+  }
 }
-/* } */
 
-/* @media (min-width: 576px) {
+@media (min-width: 576px) {
   :root {
     --resp-collapsed-header-display: none;
     --resp-left-header-display: flex;
     --resp-right-header-display: flex;
     --resp-header-container-justify: left;
   }
-} */
+}
