@@ -21,7 +21,6 @@ Setup color, size
   padding-left: var(--header-container-padding);
   margin-right: auto;
   margin-left: auto;
-  border-style: dotted;
 }
 
 .sticky {
