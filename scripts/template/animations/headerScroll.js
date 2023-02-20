@@ -9,8 +9,12 @@ let logger = logService.withClassName("headerScroll.js");
 /**
  * Setup for the class change to modify the class of the header when scrolling.
  */
-const bannerHeight = scriptVar.isBanner ? 400 : 0;
-const trigger = bannerHeight - 60; // banner height - header height
+const bannerHeight = scriptVar.isBanner
+  ? getComputedStyle(document.getElementsByTagName("body").item(0))
+      .getPropertyValue("--banner-height")
+      .split("px")[0]
+  : 0;
+const trigger = bannerHeight; // banner height - header height
 // so that the threshold corresponds to the end of the banner
 let headerState = scrollY > trigger ? "light" : "dark";
 updateHeader();

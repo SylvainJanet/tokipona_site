@@ -31,7 +31,7 @@ Header variables
   --header-lines-on-hover-duration: 0.4s;
 }
 
-@media not (min-width: 576px) {
+@media (max-width: 575px) {
   :root {
     --resp-collapsed-header-display: block;
     --resp-left-header-display: none;
