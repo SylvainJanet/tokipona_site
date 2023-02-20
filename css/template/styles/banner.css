@@ -40,7 +40,7 @@ Banner logic
 }
 
 .page-title > div {
-  height: fit-content;
+  height: min-content;
   width: 100%;
   text-align: center;
   display: flex;
@@ -48,7 +48,7 @@ Banner logic
 }
 
 .page-title > div > h2 {
-  height: min-content;
+  height: max-content;
   padding-top: 0;
   padding-bottom: 0;
 }
