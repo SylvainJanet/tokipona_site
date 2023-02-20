@@ -8,16 +8,17 @@ header.setAttribute("class", "header sticky dark-header");
 
 const content =
   "" +
+  '<div class="header-container">' +
   '<div class="left-header">' +
-  '                <div class="line-on-over-container">' +
-  '                    <a class="line-on-over" href="https://sylvainjanet.fr" id="backHome"></a>' +
-  '                    <div class="line-on-over-line dark-header-content"></div>' +
+  '                <div class="line-on-hover-container">' +
+  '                    <a class="line-on-hover" href="https://sylvainjanet.fr" id="backHome"></a>' +
+  '                    <div class="line-on-hover-line dark-header-content"></div>' +
   "                </div>" +
   "            </div>" +
   '            <div class="right-header">' +
-  '                <div class="line-on-over-container">' +
-  '                    <button class="line-on-over" id="buttonLanguage"> </button>' +
-  '                    <div class="line-on-over-line dark-header-content"></div>' +
+  '                <div class="line-on-hover-container">' +
+  '                    <button class="line-on-hover" id="buttonLanguage"> </button>' +
+  '                    <div class="line-on-hover-line dark-header-content"></div>' +
   "                </div>                " +
   "            </div>" +
   '            <div class="collapsed-header">' +
@@ -31,21 +32,22 @@ const content =
   "                    </div>" +
   '                    <ul class="sous">' +
   "                        <li>" +
-  '                            <div class="collapsed-header-item line-on-over-container">' +
+  '                            <div class="collapsed-header-item line-on-hover-container">' +
   '                                <a href="https://sylvainjanet.fr"' +
-  '                                class="line-on-over" id="subMenuBackHome">' +
+  '                                class="line-on-hover" id="subMenuBackHome">' +
   "                                </a> " +
-  '                                <div class="line-on-over-line dark-header-content"></div>' +
+  '                                <div class="line-on-hover-line dark-header-content"></div>' +
   "                            </div>" +
   "                        </li>" +
   "                        <li>" +
-  '                            <div class="collapsed-header-item line-on-over-container">' +
-  '                                <button class="line-on-over"  id="subMenuLg"></button>' +
-  '                                <div class="line-on-over-line dark-header-content"></div>' +
+  '                            <div class="collapsed-header-item line-on-hover-container">' +
+  '                                <button class="line-on-hover"  id="subMenuLg"></button>' +
+  '                                <div class="line-on-hover-line dark-header-content"></div>' +
   "                            </div>" +
   "                        </li>" +
   "                    </ul>" +
   "                </div>" +
+  "            </div>" +
   "            </div>" +
   "";
 

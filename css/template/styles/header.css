@@ -6,94 +6,86 @@ Header logic
 Setup color, size
 */
 .header {
-    display:flex;
-    width:100%;
-    height:60px;
-    align-items: center;
-    z-index: 1;
+  display: flex;
+  width: 100%;
+  height: var(--header-height);
+  align-items: center;
+  z-index: 1;
+}
+.header-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding-right: var(--header-container-padding);
+  padding-left: var(--header-container-padding);
+  margin-right: auto;
+  margin-left: auto;
+  border-style: dotted;
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
-.dark-header, .dark-header *{
-    color:black;
-    background-color:rgb(209 208 222);
-    transition-property: background-color color;
-    transition-duration: 0.8s;
+.dark-header,
+.dark-header * {
+  color: var(--dark-header-color);
+  background-color: var(--dark-header-background-color);
+  transition-property: background-color, color;
+  transition-duration: var(--header-color-transition-length);
 }
 
 .dark-header-content {
-    background-color: black;
-    transition-property: background-color;
-    transition-duration: 0.8s;
+  background-color: var(--dark-header-color);
+  transition-property: background-color;
+  transition-duration: var(--header-color-transition-length);
 }
 
-.light-header, .light-header *{
-    color:black;
-    background-color: white;
-    transition-property: background-color color;
-    transition-duration: 0.8s;
+.light-header,
+.light-header * {
+  color: var(--light-header-color);
+  background-color: var(--light-header-background-color);
+  transition-property: background-color, color;
+  transition-duration: var(--header-color-transition-length);
 }
 
 .light-header-content {
-    background-color: black;
-    transition-property: background-color;
-    transition-duration: 0.8s;
+  background-color: var(--light-header-color);
+  transition-property: background-color;
+  transition-duration: var(--header-color-transition-length);
 }
 
 .light-header {
-    box-shadow: 0px 6px 9px 0px rgb(0 0 0 / 6%);    
-    box-sizing: border-box;
+  box-shadow: var(--light-header-shadow);
+  box-sizing: border-box;
 }
 
 /**
 Links are either forms or buttons. Set links style
 */
 .header a {
-    text-decoration: none;
-}
-.header form {
-    margin-left:15px;
-    margin-right:15px;
-    height: min-content;
+  text-decoration: none;
 }
 
-.left-header a {
-    margin-left:15px;
-    margin-right:15px;
-    height: min-content;
-}
-
-.right-header button {
-    margin-left:15px;
-    margin-right:15px;
-    height: min-content;
-    padding-top:0px;
-    padding-bottom:0px;
-}
-
-.header form>input {
-    height:100%; 
+.header a,
+.header button {
+  margin-left: var(--header-link-button-margin);
+  margin-right: var(--header-link-button-margin);
+  height: min-content;
 }
 
 .header button {
-    margin-left:15px;
-    margin-right:15px;
-}
-
-.header input,
-.header button {
-    border:none
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: none;
 }
 
 /**
 Make header not selectable
 */
-.header form,
 .left-header a,
 .left-header div,
 .left-header button,
@@ -101,23 +93,22 @@ Make header not selectable
 .right-header a,
 .right-header div,
 .collapsed-header {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 
 /** 
 Ensure cursor change on header links
 */
-.header form input,
 .left-header button,
 .right-header button,
 .collapsed-header {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /**
@@ -125,147 +116,140 @@ Header is divided into two part when screen is big enough.
 One on the left, one on the right.
 */
 .left-header {
-    display:flex;
-    width:70%;
-    margin-left: 5%;
+  width: var(--left-header-width);
 }
 .right-header {
-    display: flex;
-    width:30%;
-    margin-right: 5%;
-    flex-direction: row-reverse;
+  width: var(--right-header-width);
+  flex-direction: row-reverse;
 }
 
 /**
 Header is collapsed when screen is small enough.
 */
-.collapsed-header{
-    width:15px;
-    height:100%;
-    display:flex;
-    flex-flow:column;
-    justify-content: space-evenly;
-    margin-right: 7.5%;
+.collapsed-header {
+  width: var(--collapsed-header-width);
+  height: var(--collapsed-header-height);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  margin-right: var(--collapsed-header-margin-right);
 }
 
-.deroulant>div {
-    height:100%;
-    display: flex;
-    align-items: center;
+.deroulant > div {
+  height: 100%;
+  display: block;
 }
 
 .collapsed-header-ico {
-    display:flex;
-    flex-flow:column;
-    height:25px;
-    justify-content: space-evenly;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  justify-content: space-evenly;
 }
 
 .collapsed-header-ico div {
-    width:20px;
-    height:3px;
+  width: 100%;
+  height: var(--collapsed-header-line-height);
 }
 
 /**
 Collapsed menu can be opened to show options.
 */
-.deroulant{
-    flex: 1 1 auto;
+.deroulant {
+  height: var(--collapsed-header-height);
 }
 
-.collapsed-header-item
-{
-    display: block;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    padding: 10px 0px;
+.collapsed-header-item {
+  display: block;
+  text-decoration: none;
+  padding: var(--collapsed-header-item-padding) 0px;
 }
 
-.sous{
-    display: none;
-    position: absolute;
-    z-index: 1000;
-    list-style: none;
-    padding-inline-start: 0px;
-    margin-block-start: 0em;
-    right:0%;
-    width:fit-content;
-    padding-left:15px;
+.sous {
+  position: absolute;
+  z-index: var(--collapsed-header-menu-zindex);
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  right: 0%;
+  width: fit-content;
+  padding-top: calc(
+    calc((var(--header-height) - var(--collapsed-header-height))) / 2
+  );
+  display: none;
 }
 
-.sous li{
-    flex: 1 1 auto;
-    text-align: left;
+.sous li {
+  flex: 1 1 auto;
 }
 
 .sous button {
-    cursor: pointer;
-    width: fit-content;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .sous a,
-.sous button{
-    border-bottom: none;
-    text-align: right;
+.sous button {
+  border-bottom: none;
+  text-align: right;
 }
 
 .sous a:hover,
 .sous a:active,
 .sous button:hover,
-.sous button:active{
-    border-bottom: none;
+.sous button:active {
+  border-bottom: none;
 }
 
 .deroulant:hover .sous,
-.deroulant:active .sous{
-    display: flex;
-    flex-flow: column wrap;
+.deroulant:active .sous {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+/**
+Responsive header
+*/
+.header-container {
+  max-width: var(--resp-content-width);
 }
 
 /**
 Set up responsive design to switch between collapsed
 and extended links.
 */
-@media (min-width: 500px){
-    .collapsed-header {
-        display:none
-    }
+.collapsed-header {
+  display: var(--resp-collapsed-header-display);
 }
 
-@media (max-width: 499px){
-    .left-header {
-        display:none
-    }
-    .right-header {
-        display:none
-    }
-    .header {
-        justify-content:right;
-    }
-    
+.left-header {
+  display: var(--resp-left-header-display);
+}
+.right-header {
+  display: var(--resp-right-header-display);
+}
+.header-container {
+  justify-content: var(--resp-header-container-justify);
 }
 
 /**
 Bars animated on hover
 */
-.line-on-over-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.line-on-hover-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.sous .line-on-over-container {
-    margin-right: 15px;
-}
-
-.line-on-over-line {
-    height:2px;
-    width:0px;
-    margin-top:4px;
-    transition-property: width;
-    transition-duration: 0.4s;
+.line-on-hover-line {
+  height: var(--header-lines-on-hover-height);
+  width: 0px;
+  margin-top: var(--header-lines-on-hover-margin-top);
+  transition-property: width;
+  transition-duration: var(--header-lines-on-hover-duration);
 }

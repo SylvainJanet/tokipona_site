@@ -11,7 +11,7 @@ let logger = logService.withClassName("barOnHover.js");
  * the element representing the line that will appear on mouseenter and disapear
  * on mouseleave.
  */
-let els = document.getElementsByClassName("line-on-over");
+let els = document.getElementsByClassName("line-on-hover");
 
 /**
  * Get an array of object containing the info on the element that has to be mouseentered,
