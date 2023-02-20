@@ -4,7 +4,7 @@
 const englishDict = {
   chapter1: "Chapter 1",
   chapter2: "Chapter 2",
-  buttonLanguage: "French",
+  buttonLanguage: "Français",
   chapter1Title: "Chapter 1",
   chapter2Title: "Chapter 2",
   back: "Back",
@@ -16,7 +16,7 @@ const englishDict = {
   mainsubtitle4: "Practice tools",
   footer: "Toki Pona - ",
   footerLink: "Sylvain Janet",
-  backHome: "Home",
+  backHome: "Sylvain Janet",
   tokiPonaLogo: "Toki Pona Logo",
   tokiPonaHome: "Toki Pona",
   content1: "This is still under construction. Content will come soon.",
