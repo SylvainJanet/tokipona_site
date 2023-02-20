@@ -11,12 +11,12 @@ https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
   --bp-5: 1400px;
   --bp-6: 1600px;
 }
-@media not (min-width: 576px) {
+
+@media (max-width: 575px) {
   :root {
     --resp-content-width: 100%;
   }
 }
-
 @media (min-width: 576px) {
   :root {
     --resp-content-width: var(--bp-1);
