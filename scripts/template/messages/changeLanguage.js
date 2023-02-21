@@ -1,5 +1,6 @@
 import { refreshLanguage } from "./refreshLanguage.js";
 import { logService } from "../logging/logService.js";
+import { scriptVar } from "../tools/setUp.js";
 
 const logger = logService.withClassName("changeLanguage.js");
 
@@ -8,7 +9,7 @@ const logger = logService.withClassName("changeLanguage.js");
  * then call refreshLanguage to actually change the language.
  */
 let changeLanguage = function () {
-  let language = localStorage.getItem("language");
+  let language = localStorage.getItem(scriptVar.localStorageLanguage);
   if (!language || language == "en") {
     localStorage.setItem("language", "fr");
     logger.debug("language change - fr");
@@ -23,6 +24,8 @@ let changeLanguage = function () {
  * Uses changeLanguage when the proper element is clicked on.
  */
 document
-  .getElementById("buttonLanguage")
+  .getElementById(scriptVar.idButtonChangeLanguage)
   .addEventListener("click", changeLanguage);
-document.getElementById("subMenuLg").addEventListener("click", changeLanguage);
+document
+  .getElementById(scriptVar.idSubMenuButtonChangeLanguage)
+  .addEventListener("click", changeLanguage);

@@ -3,6 +3,7 @@
  */
 import "../tools/inputDevice.js";
 import { logService } from "../logging/logService.js";
+import { scriptVar } from "../tools/setUp.js";
 
 let logger = logService.withClassName("barOnHover.js");
 
@@ -11,7 +12,7 @@ let logger = logService.withClassName("barOnHover.js");
  * the element representing the line that will appear on mouseenter and disapear
  * on mouseleave.
  */
-let els = document.getElementsByClassName("line-on-hover");
+let els = document.getElementsByClassName(scriptVar.cssLineOnHoverClass);
 
 /**
  * Get an array of object containing the info on the element that has to be mouseentered,

@@ -1,5 +1,6 @@
 import { currentDictionnary } from "../messages/dictionnaries.js";
 import { logService } from "../logging/logService.js";
+import { scriptVar } from "../tools/setUp.js";
 
 let logger = logService.withClassName("textAnimated.js"); // not used to avoid excessive logging
 
@@ -17,10 +18,10 @@ let logger = logService.withClassName("textAnimated.js"); // not used to avoid e
   const animatedElement = document
     .getElementsByClassName("text-animated")
     .item(0);
-  const typingSpeed = 80;
-  const deletionSpeed = 30;
-  const deleteDelay = 1100;
-  const blinkWidth = "2px";
+  const typingSpeed = scriptVar.animationTextTypingSpeed;
+  const deletionSpeed = scriptVar.animationTextDeletionSpeed;
+  const deleteDelay = scriptVar.animationTextDeleteDelay;
+  const blinkWidth = scriptVar.animationTextBlinkWidth;
 
   /**
    * Get the words to display animated. Usefull to call after each word in case
@@ -98,7 +99,7 @@ let logger = logService.withClassName("textAnimated.js"); // not used to avoid e
    */
   const cursor = document.createElement("span");
   cursor.style.borderRightWidth = blinkWidth;
-  cursor.classList.add("blink");
+  cursor.classList.add(scriptVar.animationTextBlinkClass);
   animatedElement.parentElement.appendChild(cursor);
 
   typingEffect();
