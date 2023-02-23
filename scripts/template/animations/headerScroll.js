@@ -11,12 +11,13 @@ let logger = logService.withClassName("headerScroll.js");
  */
 const bannerHeight = scriptVar.isBanner
   ? getComputedStyle(document.getElementsByTagName("body").item(0))
-      .getPropertyValue("--banner-height")
+      .getPropertyValue(scriptVar.cssBannerHeight)
       .split("px")[0]
   : 0;
 const trigger = bannerHeight; // banner height - header height
 // so that the threshold corresponds to the end of the banner
-let headerState = scrollY > trigger ? "light" : "dark";
+let headerState =
+  scrollY > trigger ? scriptVar.headerStateLight : scriptVar.headerStateDark;
 updateHeader();
 
 /**
@@ -27,14 +28,14 @@ updateHeader();
  */
 window.addEventListener("scroll", () => {
   if (scrollY > trigger) {
-    if (headerState == "dark") {
-      headerState = "light";
+    if (headerState == scriptVar.headerStateDark) {
+      headerState = scriptVar.headerStateLight;
       updateHeader();
     }
   }
   if (scrollY <= trigger) {
-    if (headerState == "light") {
-      headerState = "dark";
+    if (headerState == scriptVar.headerStateLight) {
+      headerState = scriptVar.headerStateDark;
       updateHeader();
     }
   }
@@ -62,11 +63,23 @@ function changeEveryClass(oldClass, newClass) {
 function updateHeader() {
   logger.debug("Update header style", { newstate: headerState });
   if (headerState === "light") {
-    changeEveryClass("dark-header", "light-header");
-    changeEveryClass("dark-header-content", "light-header-content");
+    changeEveryClass(
+      scriptVar.cssHeaderDarkClass,
+      scriptVar.cssHeaderLightClass
+    );
+    changeEveryClass(
+      scriptVar.cssHeaderContentDarkClass,
+      scriptVar.cssHeaderContentLightClass
+    );
   }
   if (headerState === "dark") {
-    changeEveryClass("light-header", "dark-header");
-    changeEveryClass("light-header-content", "dark-header-content");
+    changeEveryClass(
+      scriptVar.cssHeaderLightClass,
+      scriptVar.cssHeaderDarkClass
+    );
+    changeEveryClass(
+      scriptVar.cssHeaderContentLightClass,
+      scriptVar.cssHeaderContentDarkClass
+    );
   }
 }

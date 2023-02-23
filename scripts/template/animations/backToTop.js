@@ -2,6 +2,7 @@
  * Back to top icon logic
  */
 import { logService } from "../logging/logService.js";
+import { scriptVar } from "../tools/setUp.js";
 
 let logger = logService.withClassName("backToTop.js");
 
@@ -9,7 +10,9 @@ let logger = logService.withClassName("backToTop.js");
  * On click, remove any event listener and prevent default behaviour so as to not refresh
  * the page. Use window.scrollTo() to scroll smoothly to the top.
  */
-document.getElementsByClassName("back-to-top").item(0).onclick = (event) => {
+document.getElementsByClassName(scriptVar.cssBackToTopClass).item(0).onclick = (
+  event
+) => {
   event.preventDefault();
   logger.debug("Back to top");
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -19,7 +22,10 @@ document.getElementsByClassName("back-to-top").item(0).onclick = (event) => {
  * Setup for the class change to have the icon appear dynamically
  */
 const trigger = 100;
-let backToTopState = scrollY > trigger ? "visible" : "invisible";
+let backToTopState =
+  scrollY > trigger
+    ? scriptVar.backToTopVisibleState
+    : scriptVar.backToTopInvisibleState;
 updateBackToTop();
 
 /**
@@ -30,14 +36,14 @@ updateBackToTop();
  */
 window.addEventListener("scroll", () => {
   if (scrollY > trigger) {
-    if (backToTopState == "invisible") {
-      backToTopState = "visible";
+    if (backToTopState == scriptVar.backToTopInvisibleState) {
+      backToTopState = scriptVar.backToTopVisibleState;
       updateBackToTop();
     }
   }
   if (scrollY <= trigger) {
-    if (backToTopState == "visible") {
-      backToTopState = "invisible";
+    if (backToTopState == scriptVar.backToTopVisibleState) {
+      backToTopState = scriptVar.backToTopInvisibleState;
       updateBackToTop();
     }
   }
@@ -48,13 +54,17 @@ window.addEventListener("scroll", () => {
  * the state set in backToTopState.
  */
 function updateBackToTop() {
-  logger.debug("back-to-top icon state update", { newstate: backToTopState });
-  const el = document.getElementsByClassName("back-to-top").item(0);
-  if (backToTopState === "invisible") {
+  logger.debug(scriptVar.cssBackToTopClass + " icon state update", {
+    newstate: backToTopState,
+  });
+  const el = document
+    .getElementsByClassName(scriptVar.cssBackToTopClass)
+    .item(0);
+  if (backToTopState === scriptVar.backToTopInvisibleState) {
     el.style.opacity = 0;
     el.style.pointerEvents = "none";
   }
-  if (backToTopState === "visible") {
+  if (backToTopState === scriptVar.backToTopVisibleState) {
     el.style.opacity = 1;
     el.style.pointerEvents = "all";
   }

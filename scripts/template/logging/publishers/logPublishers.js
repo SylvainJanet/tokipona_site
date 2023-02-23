@@ -1,3 +1,5 @@
+import { scriptVar } from "../../tools/setUp.js";
+
 /**
  * Abstract class of a Log Publisher. Subclasses will be responsible for
  * actually logging a LogEntry and clearing the logs. A property
@@ -54,7 +56,7 @@ export class LogConsole extends AbstractLogPublisher {
 export class LogLocalStroage extends AbstractLogPublisher {
   constructor() {
     super();
-    this.location = "logging";
+    this.location = scriptVar.localStorageLogging;
   }
 
   /**

@@ -3,7 +3,7 @@ Header variables
 */
 :root {
   --header-height: 60px;
-  --header-container-padding: 15px;
+  --header-container-padding: var(--default-padding);
 
   --header-color-transition-length: 0.8s;
 
@@ -14,7 +14,7 @@ Header variables
   --light-header-background-color: white;
   --light-header-shadow: 0px 6px 9px 0px rgb(0 0 0 / 6%);
 
-  --header-link-button-margin: 15px;
+  --header-link-button-margin: var(--default-margin);
 
   --left-header-width: 70%;
   --right-header-width: 30%;
@@ -23,7 +23,7 @@ Header variables
   --collapsed-header-height: 30px; /* must be in px */
   --collapsed-header-margin-right: 7.5%;
   --collapsed-header-line-height: 3px;
-  --collapsed-header-item-padding: 10px;
+  --collapsed-header-item-padding: var(--default-padding);
   --collapsed-header-menu-zindex: 2;
 
   --header-lines-on-hover-height: 2px;

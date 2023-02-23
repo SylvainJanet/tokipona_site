@@ -14,36 +14,36 @@ https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 
 @media (max-width: 575px) {
   :root {
-    --resp-content-width: 100%;
+    --resp-content-width: 90%;
   }
 }
 @media (min-width: 576px) {
   :root {
-    --resp-content-width: var(--bp-1);
+    --resp-content-width: calc(0.9 * var(--bp-1));
   }
 }
 @media (min-width: 768px) {
   :root {
-    --resp-content-width: var(--bp-2);
+    --resp-content-width: calc(0.9 * var(--bp-2));
   }
 }
 @media (min-width: 992px) {
   :root {
-    --resp-content-width: var(--bp-3);
+    --resp-content-width: calc(0.9 * var(--bp-3));
   }
 }
 @media (min-width: 1200px) {
   :root {
-    --resp-content-width: var(--bp-4);
+    --resp-content-width: calc(0.9 * var(--bp-4));
   }
 }
 @media (min-width: 1400px) {
   :root {
-    --resp-content-width: var(--bp-5);
+    --resp-content-width: calc(0.9 * var(--bp-5));
   }
 }
 @media (min-width: 1600px) {
   :root {
-    --resp-content-width: var(--bp-6);
+    --resp-content-width: calc(0.9 * var(--bp-6));
   }
 }

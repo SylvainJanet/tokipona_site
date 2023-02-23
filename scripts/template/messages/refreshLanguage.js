@@ -1,5 +1,6 @@
 import { dictionnaries } from "./dictionnaries.js";
 import { textType } from "./tools.js";
+import { scriptVar } from "../tools/setUp.js";
 
 /**
  * Decreases opacity of the page from 1 to 0 in N steps at a certain speed.
@@ -59,8 +60,8 @@ function refreshTexts(language) {
  * fade-out/fade-in.
  */
 function refreshLanguage(doAnimate) {
-  let duration = 0.1;
-  let step = 5;
+  let duration = scriptVar.refreshLanguageDuration;
+  let step = scriptVar.refreshLanguageStep;
   let pauseTime = step * 2;
   let N = Math.ceil(duration / ((2 * step) / 1000));
 
@@ -71,7 +72,7 @@ function refreshLanguage(doAnimate) {
   }
 
   setTimeout(() => {
-    let language = localStorage.getItem("language");
+    let language = localStorage.getItem(scriptVar.localStorageLanguage);
     if (!language) {
       language = "en";
     }
