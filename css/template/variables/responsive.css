@@ -44,6 +44,6 @@ https://bholmes.dev/blog/alternative-to-css-variable-media-queries/
 }
 @media (min-width: 1600px) {
   :root {
-    --resp-content-width: calc(0.9 * var(--bp-6));
+    --resp-content-width: 90%;
   }
 }
