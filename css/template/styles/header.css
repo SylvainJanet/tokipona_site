@@ -170,8 +170,8 @@ Header is collapsed when screen is small enough.
 }
 
 .deroulant > div {
-  height: 100%;
   display: block;
+  height: var(--collapsed-header-line-height);
 }
 
 .collapsed-header-ico {
@@ -194,10 +194,6 @@ Collapsed menu can be opened to show options.
   padding-bottom: calc(
     calc((var(--header-height) - var(--collapsed-header-height)) / 2)
   );
-}
-
-.deroulant > div {
-  height: var(--collapsed-header-line-height);
 }
 
 .collapsed-header-item {
