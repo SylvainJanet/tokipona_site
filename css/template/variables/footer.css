@@ -2,5 +2,5 @@
 Footer variables
 */
 :root {
-  --footer-padding-top: 2rem;
+  --footer-padding-top: var(--default-padding);
 }

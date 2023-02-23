@@ -14,23 +14,38 @@
   width: 100%;
   height: 100%;
   align-items: center;
-  padding-right: var(--header-container-padding);
-  padding-left: var(--header-container-padding);
+  padding-right: var(--default-padding);
+  padding-left: var(--default-padding);
   padding-top: var(--content-padding-top);
   margin-right: auto;
   margin-left: auto;
 }
 
-.page-content {
+.page-content-box {
   background-color: white;
   width: 100%;
+
   box-shadow: var(--content-shadow);
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding-left: var(--default-padding);
+  padding-right: var(--defaul-padding);
+  box-sizing: border-box;
+}
+
+.page-content-box p {
+  text-align: center;
+}
+
+.page-content {
+  width: 100%;
 
   display: flex;
   justify-content: center;
   flex-flow: column;
-}
+  padding-left: var(--default-padding);
+  padding-right: var(--default-padding);
 
-.page-content p {
-  text-align: center;
+  box-sizing: border-box;
 }
