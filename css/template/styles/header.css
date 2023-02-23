@@ -101,7 +101,10 @@ Make header not selectable
 .right-header button,
 .right-header a,
 .right-header div,
-.collapsed-header {
+.collapsed-header,
+.left-collapsed-header a,
+.left-collapsed-header button,
+.left-collapsed-header div {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -116,6 +119,7 @@ Ensure cursor change on header links
 */
 .left-header button,
 .right-header button,
+.left-collapsed-header button,
 .collapsed-header {
   cursor: pointer;
 }
@@ -156,17 +160,24 @@ Header is collapsed when screen is small enough.
   and extended links.
   */
   display: var(--resp-collapsed-header-display);
+
+  margin-top: calc(
+    calc((var(--header-height) - var(--collapsed-header-height)) / 2)
+  );
+  padding-bottom: calc(
+    calc((var(--header-height) - var(--collapsed-header-height)) / 2)
+  );
 }
 
 .deroulant > div {
-  height: 100%;
   display: block;
+  height: var(--collapsed-header-line-height);
 }
 
 .collapsed-header-ico {
   display: flex;
   flex-flow: column;
-  height: 100%;
+  height: var(--collapsed-header-height);
   justify-content: space-evenly;
 }
 
@@ -179,7 +190,10 @@ Header is collapsed when screen is small enough.
 Collapsed menu can be opened to show options.
 */
 .deroulant {
-  height: var(--collapsed-header-height);
+  height: 100%;
+  padding-bottom: calc(
+    calc((var(--header-height) - var(--collapsed-header-height)) / 2)
+  );
 }
 
 .collapsed-header-item {
@@ -196,11 +210,11 @@ Collapsed menu can be opened to show options.
   margin-block-start: 0em;
   margin-block-end: 0em;
   right: 0%;
+  top: 100%;
   width: fit-content;
-  padding-top: calc(
-    calc((var(--header-height) - var(--collapsed-header-height))) / 2
-  );
   display: none;
+  box-shadow: 0px 6px 9px 0px rgb(0 0 0 / 12%);
+  box-sizing: border-box;
 }
 
 .sous li {
@@ -250,4 +264,14 @@ Bars animated on hover
   margin-top: var(--header-lines-on-hover-margin-top);
   transition-property: width;
   transition-duration: var(--header-lines-on-hover-duration);
+}
+
+.left-collapsed-header {
+  width: fit-content;
+  margin-right: auto;
+  /**
+Set up responsive design to switch between collapsed
+and extended links.
+*/
+  display: var(--resp-collapsed-header-display);
 }
