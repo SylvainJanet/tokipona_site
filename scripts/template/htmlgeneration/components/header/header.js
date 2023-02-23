@@ -21,6 +21,17 @@ const content =
   '                    <div class="line-on-hover-line dark-header-content"></div>' +
   "                </div>                " +
   "            </div>" +
+  "            <div class='left-collapsed-header'>" +
+  "               <div class='line-on-hover-container'>" +
+  "                 <a" +
+  "                 class='line-on-hover'" +
+  "                 href='https://sylvainjanet.fr'" +
+  "                 id='backHome'" +
+  "                 >Sylvain Janet</a" +
+  "               >" +
+  "               <div class='line-on-hover-line dark-header-content'></div>" +
+  "             </div>" +
+  "             </div>" +
   '            <div class="collapsed-header">' +
   '                <div class="deroulant" ontouchstart>' +
   "                    <div>" +
